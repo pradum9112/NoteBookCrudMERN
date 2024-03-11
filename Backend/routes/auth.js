@@ -79,6 +79,7 @@ router.post(
     const { email, password } = req.body;
     try {
       let user = await User.findOne({ email });
+      console.log(user);
       if (!user) {
         success = false;
         return res.status(400).json({
