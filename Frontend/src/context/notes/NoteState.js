@@ -3,8 +3,8 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const NoteState = (props) => {
-  // const host = "https://notebox-backend.vercel.app";
-  const host = "http://localhost:5000";
+  const host = "https://notebookcrudmern.onrender.com";
+  // const host = "http://localhost:5000";
 
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);

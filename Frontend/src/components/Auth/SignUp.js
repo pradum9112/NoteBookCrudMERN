@@ -11,8 +11,11 @@ const SignUp = (props) => {
         throw new Error("Passwords don't match");
       }
 
+      // const response = await fetch(
+      //   "http://localhost:5000/api/auth/createuser",
       const response = await fetch(
-        "http://localhost:5000/api/auth/createuser",
+        "https://notebookcrudmern.onrender.com/api/auth/createuser",
+
         {
           method: "POST",
           headers: {
