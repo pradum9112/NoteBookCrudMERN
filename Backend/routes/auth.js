@@ -5,6 +5,7 @@ const { body, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const fetchUser = require("../middleware/fetchUser");
+SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 // ROUTE 1: Create a user using: POST "/api/auth/createuser". Doesn't require auth
 router.post(
@@ -48,7 +49,7 @@ router.post(
           id: user.id,
         },
       };
-      const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY, {
+      const authToken = jwt.sign(data, SECRET_KEY, {
         expiresIn: "1h", // Set the token expiration time (e.g., 1 hour)
       });
 
@@ -99,7 +100,7 @@ router.post(
           id: user.id,
         },
       };
-      const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY, {
+      const authToken = jwt.sign(data, SECRET_KEY, {
         expiresIn: "1h", // Set the token expiration time (e.g., 1 hour)
       });
       success = true;
