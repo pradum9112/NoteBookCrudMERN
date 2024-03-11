@@ -4,8 +4,9 @@
   "description": "NoteBox - Your notes on the cloud ",
   "main": "index.js",
   "scripts": {
-     "start": "node index.js",
-    "server": "nodemon backend/index.js"
+    "start": "node index.js",
+    "server": "nodemon backend/index.js",
+    "build": "npm install --production"
     
   },
   "author": "",
