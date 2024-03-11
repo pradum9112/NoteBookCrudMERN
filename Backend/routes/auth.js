@@ -48,7 +48,7 @@ router.post(
           id: user.id,
         },
       };
-      const authToken = jwt.sign(data, jwt_secret_key, {
+      const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY, {
         expiresIn: "1h", // Set the token expiration time (e.g., 1 hour)
       });
 
