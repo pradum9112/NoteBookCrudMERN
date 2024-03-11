@@ -6,10 +6,10 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
-    // origin: ["https://notebox-one.vercel.app"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
+    // origin: ["http://localhost:3000"],
+    origin: ["https://note-book-crud-mern.vercel.app"],
     credentials: true,
+    methods: ["POST", "GET", "PUT", "DELETE"],
   })
 );
 
