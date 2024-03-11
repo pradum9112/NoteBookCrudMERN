@@ -22,15 +22,11 @@ require("./db")(); // Assuming db.js exports a function for connecting to MongoD
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/notes", require("./routes/notes"));
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // Start the server
 const server = app.listen(port, () => {
   console.log(`Notebox-backend listening on port ${port}`);
-});
-
-//shutdown
-process.on("SIGTERM", () => {
-  console.log("Received SIGTERM. Shutting down gracefully");
-  server.close(() => {
-    process.exit(0);
-  });
 });
